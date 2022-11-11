@@ -1,30 +1,30 @@
 ---
-title: Event Streaming
-status: Completed
-category: concept
+título: Transmissão de eventos
+estado: Concluído
+categoria: conceito
 ---
 
-## What it is
+## O que é isso
 
-Event streaming is an approach where software sends event data from one application to another to continuously communicate what they are doing.
-Picture a service broadcasting everything it does to all other services.
-Each activity taken by a service is referred to as an event, hence event streaming.
-For example, NASDAQ gets updates on stock and commodities pricing every second.
-If you had an application that monitored a specific set of stocks, you would want to receive that information in near real-time.
-Yahoo! Finance provides an [API](/application-programming-interface/) that pulls from NASDAQ and sends (or streams) the information (or events) from their application to any application that subscribes to it.
-The data being sent as well as the changes in that data (stock prices) are the events while the process of delivering them to an application is event streaming.
+O streaming de eventos é uma abordagem em que o software envia dados de eventos de um aplicativo para outro para comunicar continuamente o que eles estão fazendo.
+Imagine um serviço transmitindo tudo o que faz para todos os outros serviços.
+Cada atividade realizada por um serviço é chamada de evento, daí o fluxo de eventos.
+Por exemplo, a NASDAQ recebe atualizações sobre preços de ações e commodities a cada segundo.
+Se você tivesse um aplicativo que monitorasse um conjunto específico de ações, gostaria de receber essas informações quase em tempo real.
+Yahoo! O Finance fornece uma [API](https://glossary.cncf.io/application-programming-interface/) que extrai do NASDAQ e envia (ou transmite) as informações (ou eventos) de seu aplicativo para qualquer aplicativo que se inscreva nele .
+Os dados enviados, bem como as alterações nesses dados (preços das ações) são os eventos, enquanto o processo de entregá-los a um aplicativo é o fluxo de eventos.
 
-## Problem it addresses
+## Problema que resolve
 
-Traditionally, Yahoo! Finance would use single TCP requests.
-This would be very inefficient as it would require a connection to be created for every event.
-As data becomes more real-time in nature, scaling such a solution becomes inefficient.
-Opening a connection once and allowing events to flow is ideal for real-time collection.
-The amount of data being generated is growing exponentially and with that, the data state is in constant flux. Developers and users need to be able to see that data in near real-time.
+Tradicionalmente, o Yahoo! Finanças usaria solicitações TCP únicas.
+Isso seria muito ineficiente, pois exigiria que uma conexão fosse criada para cada evento.
+À medida que os dados se tornam mais em tempo real por natureza, dimensionar essa solução se torna ineficiente.
+Abrir uma conexão uma vez e permitir que os eventos fluam é ideal para coleta em tempo real.
+A quantidade de dados sendo gerados está crescendo exponencialmente e com isso, o estado dos dados está em constante fluxo. Desenvolvedores e usuários precisam ver esses dados quase em tempo real.
 
-## How it helps
+## Como isso ajuda
 
-Event streaming allows data changes to be communicated from source to receiver.
-Instead of waiting for services to request information, the service continuously streams all its events (or activities).
-It isn't concerned about what happens to the information.
-It just does what it needs to do and broadcasts it, thus remaining completely independent of any other service.
+A transmissão de eventos permite que as alterações de dados sejam comunicadas da fonte para o receptor.
+Em vez de esperar que os serviços solicitem informações, o serviço transmite continuamente todos os seus eventos (ou atividades).
+Não está preocupado com o que acontece com a informação.
+Ele apenas faz o que precisa fazer e o transmite, permanecendo completamente independente de qualquer outro serviço.
